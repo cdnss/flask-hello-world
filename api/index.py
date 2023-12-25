@@ -25,7 +25,7 @@ driver.get("https://samehadaku.guru/")
 #print(innerHTML)
 #display(HTML(driver.find_element(BY_TAG_NAME('html')))
 
-driver.quit()
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -35,3 +35,5 @@ def home():
 @app.route('/about')
 def about():
     return 'About'
+
+driver.quit()
