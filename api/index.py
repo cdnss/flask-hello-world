@@ -16,7 +16,6 @@ options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(options=options)
 #wait = WebDriverWait(driver, 10)
 #driver.implicitly_wait(5)
-
 driver.get("https://samehadaku.guru/")
 #wait.until(lambda driver: driver.execute_script("return jQuery.active == 0"))
 
