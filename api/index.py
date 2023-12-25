@@ -1,5 +1,8 @@
 from flask import Flask
 from selenium import webdriver
+from bs4 import BeautifulSoup
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.options import Options
 #from IPython.display import *
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,7 +16,9 @@ options.add_argument("--disable-gpu")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--headless=new")
 options.add_argument("--no-sandbox")
-driver = webdriver.Chrome(options=options)
+#driver = webdriver.Chrome(options=options)
+driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
+
 #wait = WebDriverWait(driver, 10)
 #driver.implicitly_wait(5)
 driver.get("https://samehadaku.guru/")
