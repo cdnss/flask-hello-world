@@ -52,7 +52,7 @@ def head(soup, host):
     if elements:  # Check if any elements were selected
         for element in elements:
             element.decompose() #use decompose instead of clear
-    rex("link", "href", 1, soup, host, 1)
+    rex("link", "href", "", soup, host, "")
     #rex("script", "src", 1, soup, host, 1)
     rex("amp-img", "src", "", soup, host, "")
     rex("img", "src", "", soup, host, "")
