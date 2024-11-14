@@ -66,7 +66,7 @@ $(document).find('#pembed').html(atob(defaultpembed));
   var sa = jQuery("#embed_holder iframe").attr("src");
   if ( sa.startsWith('"""+target+"""') ) {
   
-  var sb = sa.replace('"""+target+"""', '/')
+  var sb = sa.replace('"""+target+"""', window.location.protocol + '//' + window.location.host)
   
   jQuery("#pembed").html(`
   
@@ -84,7 +84,7 @@ $(document).find('#pembed').html(atob(defaultpembed));
   var sc = jQuery("#embed_holder iframe").attr("src");
   if ( sc.startsWith('"""+target+"""') ) {
   
-  var sv = sc.replace('"""+target+"""', '/')
+  var sv = sc.replace('"""+target+"""', window.location.protocol + '//' + window.location.host)
   
   jQuery("#pembed").html(`
   
