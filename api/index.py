@@ -66,7 +66,7 @@ $(document).find('#pembed').html(atob(defaultpembed));
   var sa = jQuery("#embed_holder iframe").attr("src");
   if ( sa.startsWith('"""+target+"""') ) {
   
-  var sb = sa.replace('"""+target+"""', '')
+  var sb = sa.replace('"""+target+"""', '/')
   
   jQuery("#pembed").html(`
   
@@ -75,7 +75,7 @@ $(document).find('#pembed').html(atob(defaultpembed));
   
   `)
   
-  alert( sb );
+  
 
   """).replace("function statistic()", "/* ").replace('jQuery("#pembed").html(embed);', F"""
   
