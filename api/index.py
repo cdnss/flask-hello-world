@@ -55,7 +55,7 @@ def head(soup, host):
     rex("link", "href", "", soup, host, "")
     #rex("script", "src", 1, soup, host, 1)
     rex("amp-img", "src", "", soup, host, "")
-    rex("img", "src", "", soup, host, "")
+    #rex("img", "src", "", soup, host, "")
     rex("a", "href", "", soup, host, "")
     rex("a", "href", 1, soup, host, "")
     rex("iframe", "src", "", soup, host, "")
@@ -103,14 +103,14 @@ $(document).find('#pembed').html(atob(defaultpembed));
 
 @app.route("/")
 def ok():
-    host = "http://" +request.host
+    host = request.host_url[:-1]
     soup = BeautifulSoup(geturl(target), 'html.parser')
     print( request.host )
     return head(soup, host)
 
 @app.route("/<path:all>" , strict_slashes=False)
 def post(all):
-    host = "http://"+request.host
+    host = request.host_url[:-1]
     url = request.full_path
     soup = BeautifulSoup(geturl(target+url), 'html.parser')
     print( target+url )
@@ -118,7 +118,7 @@ def post(all):
     
 @app.route("/f/<path:i>", strict_slashes=False)
 def f(i):
-    host = "http://" +request.host
+    host = request.host_url[:-1]
     url = request.full_path.split("/f")[1]
     soup = BeautifulSoup(geturl(target+url), 'html.parser')
     res = ""
