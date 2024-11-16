@@ -53,7 +53,7 @@ def head(soup, host):
         for element in elements:
             element.decompose() #use decompose instead of clear
     rex("link", "href", "", soup, host, "")
-    #rex("script", "src", 1, soup, host, 1)
+    rex("form", "action", "", soup, host, "")
     rex("amp-img", "src", "", soup, host, "")
     #rex("img", "src", "", soup, host, "")
     rex("a", "href", "", soup, host, "")
